@@ -84,7 +84,7 @@ Sample Response: </br>
 }
 `
 </br></br>
-## POST /users/
+## POST /users
 Content-Type: application/json</br>
 `
 {
@@ -128,7 +128,7 @@ Sample Response:</br>
 }
 `
 </br></br>
-## DELETE /users/<id> 
+## DELETE /users<id> 
 Request: DELETE /users/298a8d10-96ac-48f1-827f-82a1d2f0b3be
 Sample Response: </br>
 `
