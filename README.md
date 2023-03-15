@@ -54,13 +54,13 @@ Sample Response: </br>
 {
     "result": [
         {
-            "id": 1,
+            "id": "298a8d10-96ac-48f1-827f-82a1d2f0b3be",
             "name": "John",
             "email": "john@example.com",
             "password": "password1"
         },
         {
-            "id": 2,
+            "id": "19def540-89db-4d7a-b1d2-ee72abf86843",
             "name": "Jane",
             "email": "jane@example.com",
             "password": "password2"
@@ -70,13 +70,13 @@ Sample Response: </br>
 `
 </br></br>
 ## GET /users/<id> 
-Request: GET /users/1
+Request: GET /users/298a8d10-96ac-48f1-827f-82a1d2f0b3be
 Sample Response: </br>
 
 `
 {
     "result": {
-        "id": 1,
+        "id": "298a8d10-96ac-48f1-827f-82a1d2f0b3be",
         "name": "John",
         "email": "john@example.com",
         "password": "password1"
@@ -97,7 +97,7 @@ Sample Response:</br>
 `
 {
     "result": {
-        "id": 3,
+        "id": "91bf295c-4f50-45c1-bfee-a96fcb5a64a4",
         "name": "Mike",
         "email": "mike@example.com",
         "password": "password3"
@@ -106,7 +106,7 @@ Sample Response:</br>
 `
 </br></br>
 ## PUT /users/id
-Request: PUT /users/1
+Request: PUT /users/298a8d10-96ac-48f1-827f-82a1d2f0b3be
 Content-Type: application/json</br>
 `
 {
@@ -129,7 +129,7 @@ Sample Response:</br>
 `
 </br></br>
 ## DELETE /users/<id> 
-Request: DELETE /users/1
+Request: DELETE /users/298a8d10-96ac-48f1-827f-82a1d2f0b3be
 Sample Response: </br>
 `
 {
