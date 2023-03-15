@@ -7,14 +7,18 @@ import uuid
 user_routes = Blueprint('user_routes', __name__)
 mongo = MongoClient(Config.MONGODB_URI)
 
+# index
+@user_routes.route('/')
+def index():
+    return jsonify({'message': 'OK'})
+
 
 # GET all users
-@user_routes.route('/')
 @user_routes.route('/users', methods=['GET'])
 def get_users():
     users = mongo.db.users.find()
     output = [User.from_dict(user_dict) for user_dict in users]
-    return jsonify({'result': [user.to_dict() for user in output]})
+    return jsonify({'message': [user.to_dict() for user in output]})
 
 
 # GET user by ID
@@ -26,7 +30,7 @@ def get_user(id):
         output = user.to_dict()
     else:
         output = "No such user found"
-    return jsonify({'result': output})
+    return jsonify({'message': output})
 
 
 # POST new user
@@ -40,7 +44,7 @@ def add_user():
         return jsonify({'error': 'User with this email already exists'})
     mongo.db.users.insert_one(user.to_dict())
 
-    return jsonify({'result': user.to_dict()})
+    return jsonify({'message': user.to_dict()})
 
 
 # PUT update user by ID
@@ -57,7 +61,7 @@ def update_user(id):
         output = user.to_dict()
     else:
         output = "No such user found"
-    return jsonify({'result': output})
+    return jsonify({'message': output})
 
 
 # DELETE user by ID
@@ -69,4 +73,4 @@ def delete_user(id):
         output = "User deleted"
     else:
         output = "No such user found"
-    return jsonify({'result': output})
+    return jsonify({'message': output})

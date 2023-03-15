@@ -52,7 +52,7 @@ The application provides REST API endpoints for CRUD operations on a User resour
 `
 Sample Response: </br>
 {
-    "result": [
+    "message": [
         {
             "id": "298a8d10-96ac-48f1-827f-82a1d2f0b3be",
             "name": "John",
@@ -75,7 +75,7 @@ Sample Response: </br>
 
 `
 {
-    "result": {
+    "message": {
         "id": "298a8d10-96ac-48f1-827f-82a1d2f0b3be",
         "name": "John",
         "email": "john@example.com",
@@ -96,7 +96,7 @@ Content-Type: application/json</br>
 Sample Response:</br>
 `
 {
-    "result": {
+    "message": {
         "id": "91bf295c-4f50-45c1-bfee-a96fcb5a64a4",
         "name": "Mike",
         "email": "mike@example.com",
@@ -119,7 +119,7 @@ Content-Type: application/json</br>
 Sample Response:</br>
 `
 {
-    "result": {
+    "message": {
         "id": 1,
         "name": "John Smith",
         "email": "johnsmith@example.com",
@@ -133,6 +133,6 @@ Request: DELETE /users/298a8d10-96ac-48f1-827f-82a1d2f0b3be
 Sample Response: </br>
 `
 {
-    "result": "User deleted"
+    "message": "User deleted"
 }
 `
