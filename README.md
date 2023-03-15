@@ -39,10 +39,10 @@ DB_NAME = 'db'
     MONGODB_URI = os.environ.get('MONGODB_URI') or 'mongodb://localhost:27017/db'
 `
 <br><br>
-4. Run the Flask application using the command flask run.
+4. Run the Flask application using the command `flask run`.
 </br></br>
 ## Usage
-Run the Flask application using the command flask run.
+Run the Flask application using the command `flask run`.
 Use Postman to test the REST API endpoints.
 </br></br>
 ## Endpoints
@@ -69,7 +69,7 @@ Sample Response: </br>
 }
 `
 </br></br>
-## GET /users/<id> 
+## GET /users<id> 
 Request: GET /users/298a8d10-96ac-48f1-827f-82a1d2f0b3be
 Sample Response: </br>
 
