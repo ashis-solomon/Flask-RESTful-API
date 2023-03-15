@@ -45,6 +45,8 @@ DB_NAME = 'db'
 Run the Flask application using the command `flask run`.
 Use Postman to test the REST API endpoints.
 </br></br>
+Run the tests using the command `pytest -vs`.
+</br></br>
 ## Endpoints
 The application provides REST API endpoints for CRUD operations on a User resource:
 </br></br>
