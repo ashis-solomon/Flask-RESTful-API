@@ -1,6 +1,7 @@
 from flask import abort
 from flask_restful import Resource, marshal_with, fields, reqparse
 from bson import ObjectId
+import bcrypt
 
 from db import users_collection
 
@@ -33,6 +34,10 @@ class User(Resource):
     @marshal_with(user_fields)
     def post(self):
         args = user_parser.parse_args()
+        password = args.pop('password')
+        hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+        # store the hashed password instead of plain text
+        args['password'] = hashed_password
         result = users_collection.insert_one(args)
         user = users_collection.find_one({'_id': result.inserted_id})
         return user, 201
@@ -40,6 +45,9 @@ class User(Resource):
     @marshal_with(user_fields)
     def put(self, id):
         args = user_parser.parse_args()
+        password = args.pop('password')
+        hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+        args['password'] = hashed_password
         result = users_collection.update_one({'_id': ObjectId(id)}, {'$set': args})
         if result.matched_count == 1:
             user = users_collection.find_one({'_id': ObjectId(id)})
